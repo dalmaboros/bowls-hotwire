@@ -1,0 +1,10 @@
+<%= f.fields_for :scraps, @bowl.scraps.build do |scraps_fields| %>
+  <%= scraps_fields.hidden_field :user_id, value: current_user.id %>
+  <%= scraps_fields.label :description, "scrap description" %>
+  <%= scraps_fields.text_field :description, autocomplete: :off, required: true %></p>
+
+  <%= scraps_fields.fields_for :bowl_scraps, @bowl.scraps.build.bowl_scraps.build do |bowl_scrap_form| %>
+    <%= bowl_scrap_form.hidden_field :priority, value: nil %>
+  <% end %>
+
+<% end %>

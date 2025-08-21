@@ -1,0 +1,37 @@
+<% title "scraps" %>
+
+<div class="column">
+  <% if @bowl %>
+    <h2>scraps in <%= link_to @bowl.name, bowl_path(@bowl) %></h2>
+  <% else %>
+    <h2>all scraps</h2>
+  <% end %>
+
+  <% if @bowl %>
+    <% if @bowl.scraps.empty? %>
+      <p>(this bowl is empty)</p>
+      <p><%= link_to "add a scrap", new_bowl_scrap_path %></p>
+    <% else %>
+      <% @bowl.scraps.each do |scrap| %>
+        <p>
+          <%= scrap.description %>
+          <%= link_to "(edit)", edit_scrap_path(scrap) %>
+        </p>
+      <% end %>
+    <% end %>
+  <% else %>
+    <% if @scraps.empty? %>
+      there are no scraps
+      <p><%= link_to "make one", new_scrap_path %></p>
+    <% else %>
+      <% @scraps.each do |scrap| %>
+        <p>
+          <%= scrap.description %>
+          <%= link_to "(edit)", edit_scrap_path(scrap) %>
+        </p>
+      <% end %>
+    <% end %>
+    <p><%= link_to "scraps with no bowl", no_bowls_path %></p>
+  <% end %>
+
+</div>

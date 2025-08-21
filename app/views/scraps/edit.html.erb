@@ -1,0 +1,11 @@
+<% title "edit #{@scrap.description}" %>
+
+<div class="column">
+  <h2>edit '<%= @scrap.description %>'</h2>
+
+  <%= form_for @scrap do |f| %>
+    <%= render 'form', f: f %>
+  <% end %>
+
+  <p><%= link_to "delete scrap", @scrap, method: :delete, data: { confirm: "Delete scrap from all bowls permanently?" } %></p>
+</div>

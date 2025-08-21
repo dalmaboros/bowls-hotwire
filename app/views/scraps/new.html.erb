@@ -1,0 +1,13 @@
+<% title "new scrap" %>
+
+<div class="column">
+  <% if @bowl %>
+    <h2>add scrap to '<%= @bowl.name %>'</h2>
+  <% else %>
+    <h2>new scrap</h2>
+  <% end %>
+
+  <%= form_for @scrap do |f| %>
+    <%= render 'form', f: f %>
+  <% end %>
+</div>

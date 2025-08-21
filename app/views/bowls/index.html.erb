@@ -1,0 +1,23 @@
+<% title "bowls" %>
+
+<div class="column">
+    <%= link_to new_bowl_path, class: "random-bowl" do %>
+      <div class="add-glyph">
+        <div class="horizontal-line"></div>
+        <div class="vertical-line"></div>
+      </div>
+      <%= link_to "new_bowl", new_bowl_path %>
+    <% end %>
+</div>
+
+<% @bowls.each do |bowl| %>
+  <div class="column">
+      <%= link_to bowl_path(bowl), class: "random-bowl" do %>
+        <div class="bowl-glyph"></div>
+        <div class="bowl-name-div">
+
+          <%= link_to bowl.name, bowl_path(bowl) %>
+          </div>
+      <% end %>
+  </div>
+<% end %> <!-- each do -->
