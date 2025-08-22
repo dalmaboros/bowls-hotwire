@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '3.3.1'
+ruby file: '.ruby-version'
 
 gem 'active_model_serializers'
 gem 'coffee-rails'
@@ -10,7 +10,8 @@ gem 'nokogiri'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'pg'
-gem 'rails', '7.1.3.3'
+gem 'puma', '~> 6.0'
+gem 'rails','~> 8.0'
 gem 'sass-rails'
 # gem 'sdoc', group: :doc
 # gem 'therubyracer', platforms: :ruby
